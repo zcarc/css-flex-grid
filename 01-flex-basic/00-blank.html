@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,21 @@
 	<style>
 		.flex-container {
 			display: flex;
+			flex-direction: column;
+		}
+		@media (min-width: 600px) {
+			.flex-container {
+				display: flex;
+				flex-direction: row;
+				
+			}
+			.flex-item {
+				flex: 1;
+			}
 		}
 	</style>
 </head>
+
 <body>
 	<div class="flex-container">
 		<div class="flex-item">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
@@ -19,6 +32,7 @@
 		<div class="flex-item">CCCCCCCCCCCCCCCCCCCCCCCC</div>
 	</div>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit.
-	
+
 </body>
+
 </html>
