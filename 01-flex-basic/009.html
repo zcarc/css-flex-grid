@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Flex</title>
+    <link rel="stylesheet" href="default.css">
+    <!-- 
+    flex-shrink를 0으로 세팅하면 flex-basis보다 줄어들지 않는다.
+    flex-shrink 기본값은 1
+    이 속성으로 flex-shrink를 0으로 하고 width를 고정시키고 다른 엘리먼트만
+    기본값으로 설정해서 유연하게 만들 수 있다. 
+    -->
+    <!-- 
+    flex-basis로만 크기를 정하고 나머지는 기본값으로 설정해도 flex 속성들이
+    엘리먼트들을 고정시키지 못해서 flex속성 대신에 width를 많이 사용한다. 
+    -->
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        .flex-item {
+            flex: 1 1 auto;
+        }
+
+        .flex-item:nth-child(1) {
+           width: 20%;
+        }
+
+        .flex-item:nth-child(2) {
+           width: 60%;
+        }
+
+        .flex-item:nth-child(3) {
+           width: 20%;
+        }
+
+        .flex-item p {
+            /* white-space: nowrap; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Nesciunt commodi doloremque dolor sed corrupti
+                earum tempora, aperiam praesentium et nulla eveniet,
+                voluptatum eius itaque veritatis, sit exercitationem!
+                Illum pariatur,
+            </p>
+        </div>
+        <div class="flex-item">BB</div>
+        <div class="flex-item">CCCCC</div>
+        <div class="flex-item">DDDDDDDDDDD</div>
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+</body>
+
+</html>
