@@ -115,3 +115,60 @@
   border-radius: 1em;
   background: white;
 }
+
+/* card list */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.card-image {
+  height: 0;
+  padding-bottom: 60%;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-image img {
+  display: none;
+}
+
+/* 
+  flex: auto 속성은 flex: 1 1 auto 와 같다.
+*/
+.card-desc {
+  flex: auto;
+  padding: 1em;
+  background: white;
+}
+
+/* 
+  card-item의 width 값을 줄이고
+  justify-content: space-between을 준다면
+  3단 컬럼에서 가운데 부분만 빈 공간으로 채워지기 때문에
+  애초에 그냥 동일하게 비율을 나누고 padding을 각 item마다 준다음에
+  list에 적용되어 있는 padding의 left, right 값을 margin 값을 마이너스를
+  할당해서 다시 생긴 그 공간을 없애준다.
+*/
+@media (min-width: 600px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+    /* justify-content: space-between; */
+  }
+
+  .card-item {
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-item {
+    width: 33.33333%;
+  }
+}
