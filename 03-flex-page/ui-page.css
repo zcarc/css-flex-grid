@@ -44,6 +44,7 @@
 /* footer */
 .footer {
   padding: 1rem;
+  border-top: 1px solid lightgray;
   text-align: center;
 }
 
@@ -97,4 +98,61 @@ label[for="modal-switch"] span {
   width: 1px;
   height: 1px;
   opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .secondary {
+    width: 20%;
+  }
+
+  .secondary-a {
+    order: 1;
+  }
+
+  .secondary-b {
+    order: 3;
+  }
+
+  .primary {
+    width: 60%;
+    order: 2;
+  }
+
+  /* 
+    footer에 order을 주지 않으면 기본값은 0이라서
+    order를 준 클래스보다 앞선다. 
+  */
+  .footer {
+    order: 4;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .primary {
+    /* 이 방법을 사용해서 비율을 유지할 수 있다. */
+    width: calc(100% - 600px);
+
+    /* 위와 같이 width의 calc를 사용해서 width 정렬을 할 수도 있지만 flex의 flex-grow를 사용해서 폭 조정을 할 수 도 있다. */
+    /* 물론 이렇게 하는 방법도 있지만 width를 사용하면 정확하게 고정적으로 유지시켜주는데 flex는 일정크기 이상이 늘어나게 된다면 밑으로 내려가게 된다. */
+    /* 아래는 flex: 1 1 auto; 와 같다.  */
+    /* flex: auto;  */
+  }
+
+  .secondary {
+    width: 300px;
+  }
 }
