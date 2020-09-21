@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.grid-container {
+            display: grid;
+            
+            /* 
+                template에서 이 값만 50px로 준다면 첫번째 컬럼만 50px로 들어가고 나머지는 그대로임
+                만약에 auto를 지정했다면 5px가 첫번째 컬럼만 아니라 나머지 컬럼도 전부 50px로 변경됨
+                template에서 repeate() 함수를 사용하지 않는다면 반복하지 않고 auto를 사용하면
+                어떤 데이터가 와도 자동적으로 계속 해당 값으로 비율을 정함 
+                처음에 template column으로 width를 지정하고
+                auto columns로 비율을 지정하면 처음 그 값을 기준으로 계속해서 그리드를 유지한다.
+            */
+            grid-template-columns: 50px;
+            grid-auto-columns: 1fr 2fr;
+
+            gap: 1rem;
+        }
+
+        .grid-item:nth-child(1) {grid-column: 2;}
+        .grid-item:nth-child(2) {grid-column: 3;}
+        .grid-item:nth-child(3) {grid-column: 4;}
+        .grid-item:nth-child(4) {grid-column: 5;}
+        .grid-item:nth-child(5) {grid-column: 6;}
+        .grid-item:nth-child(6) {grid-column: 7;}
+
+	</style>
+</head>
+
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+
+</html>
