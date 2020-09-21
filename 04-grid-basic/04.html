@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.grid-container {
+			display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(200px, auto));
+            /* gap: 20px; */
+            /* row-gap: 20px; */
+
+            /* 이것도 되기는 하나 이 문법은 예전문법이라서 예전 브라우저 호환성 때문에 쓰는 경우도 있으나 */
+            /* grid-gap 대신에 그냥 gap 이 현재 문법이다. */
+            /* 근데 IE에서는 grid-gap이든 그냥 gap이든 지원 자체를 하지 않는다. */
+            /* 그래서 마진을 사용하거나 공백용 셀을 추가로 만드는 등.. 작업을 해야한다. */
+            /* grid-gap: 20px; */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+
+</html>
