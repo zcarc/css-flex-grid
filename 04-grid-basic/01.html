@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid</title>
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.grid-container {
+			display: grid;
+
+			/* 말그대로 grid item 들의 width를 의미함 */
+			/* grid-template-columns: 100px 300px 200px; */
+
+			/* 비율 1:2:1 */
+			/* grid-template-columns: 1fr 2fr 1fr; */
+
+			/* 가운데만 고정하고 양끝만 늘어나고 줄어듬 */
+			/* grid-template-columns: 1fr 500px 1fr; */
+
+			/* 아래와 같이 1fr이  5번 있으면 컬럼이 5개이고, 계속해서 반복하니까 함수로 줄여줄 수 있다. */
+			/* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+
+			/* repeat()함수를 쓰면 계속해서 반복쓰는 단위의 중복을 줄여줄 수 있다. */
+			/* 아래와 같이 쓰면 5개가 계속해서 반복한다. */
+			/* grid-template-columns: repeat(5, 1fr); */
+
+			/* 아래와 같이 사용하면 1,2,1 비율이 3번씩 계속해서 반복한다. */
+			/* grid-template-columns: repeat(3, 1fr 2fr 1fr); */
+
+			grid-template-columns: repeat(3, 1fr);
+
+			/* grid-template-rows: 200px 200px auto; */
+
+			height: 80vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="grid-item">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item">C</div>
+		<div class="grid-item">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+		<div class="grid-item">G</div>
+		<div class="grid-item">H</div>
+		<div class="grid-item">I</div>
+	</div>
+</body>
+</html>
