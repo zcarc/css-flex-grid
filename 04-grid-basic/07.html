@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="default.css">
+
+    <style>
+        /* areas 속성은 IE에서 대체 속성이 없어서 사용할 수 없다. */
+        /* 
+            header 첫번째 부분에 마침표나 none을 붙이면 빈 여백이 생기는데 (강의에서)
+            근데 지금 실습을 해보니 빈 여백이 생기지 않는다. 
+        */
+        .grid-container {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-areas:
+                'abc header header'
+                'sidebar-a main sidebar-b'
+                'footer footer footer';
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebard-a {
+            grid-area: sidebard-a;
+        }
+
+        .sidebard-b {
+            grid-area: sidebard-b;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header grid-item">Header</div>
+        <div class="sidebar-a grid-item">Sidebar A</div>
+        <div class="sidebar-b grid-item">Sidebar B</div>
+        <div class="main grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, explicabo
+            tempore. Nemo vero maxime impedit quae deserunt ducimus in, distinctio et corporis ratione labore, veniam
+            amet minus cupiditate consequuntur error? Molestias reprehenderit ipsum adipisci cumque, placeat dignissimos
+            asperiores dicta architecto voluptates ipsa libero voluptatum sit in dolorem ab? Sunt vel, tempora maiores
+            numquam nisi at delectus mollitia illo cumque. Quae debitis nisi eveniet perferendis esse, iusto harum
+            delectus? Pariatur, deleniti natus? Consectetur ullam quia aut excepturi omnis laborum explicabo tempore.
+            Facere alias impedit iure exercitationem voluptate nesciunt corrupti, quidem aut commodi officia dicta
+            explicabo ad repellendus ducimus. Inventore accusantium ad nesciunt et labore aspernatur debitis reiciendis
+            molestias esse cumque non dolorem qui dolore perspiciatis ipsam laboriosam natus explicabo eaque sit,
+            laborum nostrum cum repudiandae consectetur maiores. Delectus in praesentium fugit maxime cumque nisi? Dicta
+            sunt accusantium necessitatibus beatae dolore ducimus voluptate quasi eius recusandae alias debitis libero
+            cupiditate labore neque possimus, nemo ipsum sequi iste quas laboriosam odit dolorum excepturi adipisci
+            ratione! Tenetur error illo incidunt earum amet odit similique, a dicta consectetur, nihil, ipsum beatae ad.
+            Officiis perspiciatis qui accusantium doloribus ad laborum non ullam in debitis. Unde facere atque impedit
+            magni quidem temporibus fugit necessitatibus inventore harum vel!</div>
+        <div class="footer grid-item">Footer</div>
+    </div>
+</body>
+
+</html>
