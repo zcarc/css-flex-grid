@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="default.css">
+
+    <!--
+        z-index
+        z-index로 Z축 정렬을 할 수 있어요. 숫자가 클 수록 위로 올라옵니다.
+        (position에서의 z-index랑 똑같이 생각하시면 됩니다.)
+
+        이 값이 설정되지 않았다면 그냥 나머지 값은 0이라고 생각하면 된다.
+     -->
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* gap: 3px;
+            height: 20rem; */
+        }
+
+        .grid-item:nth-child(5) {
+            z-index: 1;
+            transform: scale(2);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">A</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+        <div class="grid-item">F</div>
+        <div class="grid-item">G</div>
+        <div class="grid-item">H</div>
+        <div class="grid-item">I</div>
+    </div>
+</body>
+
+</html>
