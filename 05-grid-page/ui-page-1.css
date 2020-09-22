@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+}
+
+/* .header에 justify-content: space-between; 대신 사용 가능 */
+/* .search-form {
+    margin-left: auto;
+  } */
+
+@media (max-width: 424px) {
+  .menu-link {
+    font-size: 1rem;
+  }
+}
+
+.search-form {
+  width: 300px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: 3rem;
+}
+
+.primary {
+  padding: 1rem;
+}
+
+.secondary {
+  padding: 1rem;
+}
+
+.secondary-a {
+  background: white;
+}
+
+.secondary-b {
+  color: white;
+  background: #666;
+}
+
+/* footer */
+.footer {
+  padding: 1rem;
+  border-top: 1px solid lightgray;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  top: 80px;
+}
+
+#modal-switch {
+  font-size: 2rem;
+}
+
+#modal-switch:checked ~ .modal {
+  display: flex;
+}
+
+/* 
+    버튼이니 inline-flex로 하면 더 좋겠네요, 일반적으로 
+  */
+label[for="modal-switch"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  /* background: red; */
+}
+
+label[for="modal-switch"]:before {
+  content: "⚑";
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#modal-switch:checked ~ label[for="modal-switch"]:before {
+  color: dodgerblue;
+}
+
+/* 스크린리더, SEO 등의 이유로 display: none; 이나
+  width: 0; 등의 사용은 피했습니다. */
+/* 추가적으로 안보이게 하는 방법은 position left 값을 마이너스 큰 값을 사용해서 밀어버릴 수도 있고 */
+/* 클립패스 같은걸로 잘라내서 마스크처럼 안보이게 할 수도 있다. */
+#modal-switch,
+label[for="modal-switch"] span {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .page {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+  }
+
+  .header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .menu {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .primary {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .secondary-a {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .secondary-b {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .footer {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+  }
+}
+
+@media (min-width: 1400px) {
+  .page {
+    grid-template-columns: 300px auto 300px;
+  }
+}

@@ -1,0 +1,182 @@
+/* menu */
+.menu {
+  display: flex;
+}
+/* 
+물론 flex-grow로 증가시켜도 되지만 이걸 쓰지 않는 이유는 IE에서 호환이 안되기 때문이다.
+그래서 width로 하는 방법을 추천함 
+*/
+.menu-item {
+  /* flex-grow: 1; */
+  width: 25%;
+  background: gold;
+  transition: 0.5s;
+}
+
+.menu-item:hover {
+  /* flex-grow: 1.5; */
+  width: 35%;
+  background: crimson;
+}
+
+.menu-link {
+  display: block;
+  padding: 1em;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  text-decoration: none;
+  text-align: center;
+}
+
+.menu-link:hover {
+  color: white;
+}
+
+/* search */
+.search-form {
+  display: flex;
+  height: 40px;
+}
+
+.search-form input[type="search"] {
+  flex: 1;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+}
+
+.search-form input[type="submit"] {
+  width: 4em;
+  background: gold;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+}
+
+/* bullet list */
+.info-list {
+  margin-bottom: 2rem;
+}
+
+.info-list-item {
+  display: flex;
+  margin: 0.5em 0;
+}
+
+.info-list-item:before {
+  content: "";
+  margin-right: 0.5em;
+}
+
+/* message */
+.user-list {
+  margin-bottom: 2rem;
+}
+
+.user-item {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+/* 여기서 flex-shrink 속성을 0으로 설정해주지 않는다면 이 값의 default 속성이 1이므로 줄어들게 되어 있다. */
+.user-photo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5em;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-color: gold;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 150%;
+}
+
+/* friend list */
+.friend-item {
+  align-items: center;
+}
+
+.user-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dialog {
+  width: 50vw;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+}
+
+/* card list */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.card-image {
+  height: 0;
+  padding-bottom: 60%;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-image img {
+  display: none;
+}
+
+/* 
+  flex: auto 속성은 flex: 1 1 auto 와 같다.
+*/
+.card-desc {
+  flex: auto;
+  padding: 1em;
+  background: white;
+}
+
+/* 
+  card-item의 width 값을 줄이고
+  justify-content: space-between을 준다면
+  3단 컬럼에서 가운데 부분만 빈 공간으로 채워지기 때문에
+  애초에 그냥 동일하게 비율을 나누고 padding을 각 item마다 준다음에
+  list에 적용되어 있는 padding의 left, right 값을 margin 값을 마이너스를
+  할당해서 다시 생긴 그 공간을 없애준다.
+*/
+@media (min-width: 600px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+    /* justify-content: space-between; */
+  }
+
+  .card-item {
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-item {
+    width: 33.33333%;
+  }
+}
