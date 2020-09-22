@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="default.css">
+
+    <!-- 
+        align-content와 justify-content를 같이 쓸 수 있는 단축 속성.
+        align-content, justify-content의 순서로 작성하고, 
+        하나의 값만 쓰면 두 속성 모두에 적용됩니다. 
+    -->
+    <style>
+        .grid-container {
+            display: grid;
+            gap: 3px;
+            height: 20rem;
+
+            place-content: space-between center;
+        }
+
+        .grid-item:nth-child(1) {
+            grid-column: 1 / auto;
+        }
+         .grid-item:nth-child(2) {
+            grid-column: 2 / auto;
+        }
+        .grid-item:nth-child(3) {
+            grid-column: 3 / auto;
+        }
+        .grid-item:nth-child(3) {
+            grid-column: 3 / auto;
+        }
+        .grid-item:nth-child(4) {
+            grid-column: 4 / auto;
+        }
+        .grid-item:nth-child(5) {
+            grid-column: 5 / auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">A</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+        <div class="grid-item">F</div>
+        <div class="grid-item">G</div>
+        <div class="grid-item">H</div>
+        <div class="grid-item">I</div>
+    </div>
+</body>
+
+</html>
